@@ -9,9 +9,13 @@ const PostSchema = new mongoose.Schema({
     type: String,
     required: true,
   },
-  image: {
-    type: String,
-    require: true,
+  cluster_members:{
+    type: [String],
+    required: true,
+  },
+  member_count:{
+    type: Number,
+    required: true,
   },
   user: {
     type: mongoose.Schema.Types.ObjectId,
