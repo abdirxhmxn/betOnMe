@@ -1,4 +1,5 @@
 const cloudinary = require("../middleware/cloudinary");
+const Cluster = require("../models/Cluster")
 const Post = require("../models/Post");
 
 module.exports = {
@@ -26,6 +27,24 @@ module.exports = {
       console.log(err);
     }
   },
+  //RESOLVE - get this function to create cluster! check the Cluster model
+  createCluster: async (req, res) => {
+    try {
+
+
+      await Cluster.create({
+        cluster_name: req.body.title,
+        creator_user_id: result.secure_url,
+        cluster_members: result.public_id,
+        member_count: req.body.caption,
+        user: req.user.id,
+      });
+      console.log("Post has been added!");
+      res.redirect("/profile");
+    } catch (err) {
+      console.log(err);
+    }
+  },
   createPost: async (req, res) => {
     try {
       // Upload image to cloudinary
@@ -45,7 +64,9 @@ module.exports = {
       console.log(err);
     }
   },
-  likePost: async (req, res) => {
+  //RESOLVE - get this function to update user pfps!
+  //RESOLVE - after a user creates an account, they should be able to 
+  updateUserPfp: async (req, res) => {
     try {
       await Post.findOneAndUpdate(
         { _id: req.params.id },

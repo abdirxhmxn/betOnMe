@@ -1,6 +1,6 @@
 const mongoose = require("mongoose");
 
-const PostSchema = new mongoose.Schema({
+const clusterSchema = new mongoose.Schema({
   cluster_name: {
     type: String,
     required: true,
@@ -27,4 +27,4 @@ const PostSchema = new mongoose.Schema({
   },
 });
 
-module.exports = mongoose.model("Cluster", ClusterSchema);
+module.exports = mongoose.model("Cluster", clusterSchema);
