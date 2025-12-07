@@ -31,7 +31,6 @@ module.exports = {
   createCluster: async (req, res) => {
     try {
 
-
       await Cluster.create({
         cluster_name: req.body.title,
         creator_user_id: result.secure_url,
