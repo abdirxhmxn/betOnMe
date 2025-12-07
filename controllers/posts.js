@@ -35,7 +35,7 @@ module.exports = {
       console.log(err);
     }
   },
-  //RESOLVE - get this function to create cluster! check the Cluster model
+  //this function updates a cluser
   createCluster: async (req, res) => {
     try {
       console.log(req.user)
