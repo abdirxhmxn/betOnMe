@@ -1,14 +1,15 @@
 # betOnMe
-_Users can compete against their friends to help build habits!_
+_Users can compete against their friends to help build habits! Find clusters to share the habits you want to improve on, betting on yourself and your companions to complete the habit building task with a specified amount of time and frequency for completion._
 
-1 master version bub
-branches/forks for each team
-main
-*devops branch
-*backend branch
-  //let pms figure out how to organize a branch
-*frontend branch
-  //let pms figure out how to organize the branch
+## Structure of app
+
+* _Branches are provided for each team_
+  * __1 master version: Main__ (Requests are only made to main under special circumstances)
+  * __devops branch__
+  * __backend branch__
+    * _let pms figure out how to organize a branch_
+  * __frontend branch__
+    * _let pms figure out how to organize the branch_
 
 ## How to submit your code for review
 1. Fork and Clone this repo
@@ -20,14 +21,6 @@ main
 7. Wait for DevOps to review
 8. M E R G E
 
-## Tech Stack: 
-| Category  | Tools                               |
-| --------- | ----------------------------------- |
-| Backend   | Node.js, Express, Mongoose, MongoDB |
-| Frontend  | EJS, HTML, CSS, JavaScript          |
-| Dev Tools | dotenv                     |
-
-Issues & Actions to look into:
 ## How to Build & Run the App
 
 Follow these steps to run the project locally:
@@ -61,3 +54,12 @@ Navigate to:
 
 http://localhost:3000   → client
 http://localhost:5000   → backend API
+
+## Tech Stack: 
+| Category  | Tools                               |
+| --------- | ----------------------------------- |
+| Backend   | Node.js, Express, Mongoose, MongoDB |
+| Frontend  | EJS, HTML, CSS, JavaScript          |
+| Dev Tools | dotenv                     |
+
+Issues & Actions to look into:
