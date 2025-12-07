@@ -11,6 +11,14 @@ module.exports = {
       console.log(err);
     }
   },
+//this function gets the cluster creation page!
+  getClusterCreationPage: async (req, res) => {
+    try {
+      res.render("clusterCreation.ejs", { user: req.user });
+    } catch (err) {
+      console.log(err);
+    }
+  },
   getFeed: async (req, res) => {
     try {
       const posts = await Post.find().sort({ createdAt: "desc" }).lean();
@@ -30,16 +38,15 @@ module.exports = {
   //RESOLVE - get this function to create cluster! check the Cluster model
   createCluster: async (req, res) => {
     try {
-
+      console.log(req.user)
       await Cluster.create({
         cluster_name: req.body.title,
-        creator_user_id: result.secure_url,
-        cluster_members: result.public_id,
-        member_count: req.body.caption,
-        user: req.user.id,
+        creator_user_id: req.user.id,
+        cluster_members: req.user.id,
+        member_count: 1,
       });
       console.log("Post has been added!");
-      res.redirect("/profile");
+      res.redirect("/createCluster");
     } catch (err) {
       console.log(err);
     }
