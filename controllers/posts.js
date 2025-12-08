@@ -109,7 +109,7 @@ module.exports = {
       const tasks = await Task.find({ user: req.user.id })
       console.log(tasks)
 
-      // res.redirect("/userProfile", { tasks: tasks });
+      res.render("userProfile.ejs", { user: req.user.id });
     } catch (err) {
       console.log(err);
     }
