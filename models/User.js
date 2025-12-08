@@ -8,6 +8,7 @@ const UserSchema = new mongoose.Schema({
   name: {type: String},
   profile_image: {type: String},
   joined_clusters: {type: [String]},
+  tasks_isCompleted: {type: [Boolean]},
 });
 
 // Password hash middleware.
