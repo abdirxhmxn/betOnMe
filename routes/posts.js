@@ -9,7 +9,7 @@ router.get("/:id", ensureAuth, postsController.getPost);
 
 router.post("/createPost", upload.single("file"), postsController.createPost);
 
-router.post("/createCluster", postsController.createCluster);
+router.post("/createCluster", upload.single("file"), postsController.createCluster);
 
 router.post("/createTask", upload.single("file"), postsController.createTask);
 
