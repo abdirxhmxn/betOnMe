@@ -1,6 +1,7 @@
 const cloudinary = require("../middleware/cloudinary");
 const Cluster = require("../models/Cluster")
 const Post = require("../models/Post");
+const Task = require("../models/Task");
 
 module.exports = {
   getProfile: async (req, res) => {
@@ -11,7 +12,16 @@ module.exports = {
       console.log(err);
     }
   },
-//this function gets the cluster creation page!
+  //this function gets the user profile, and the todo list of tasks!
+  getUserProfile: async (req, res) => {
+    try {
+
+      res.render("userProfile.ejs", { user: req.user });
+    } catch (err) {
+      console.log(err);
+    }
+  },
+  //this function gets the cluster creation page!
   getClusterCreationPage: async (req, res) => {
     try {
       res.render("clusterCreation.ejs", { user: req.user });
@@ -38,10 +48,22 @@ module.exports = {
   //this function updates a cluser
   createCluster: async (req, res) => {
     try {
-      console.log(req.user)
+      //this function will make a pseudo-randomly generated code on cluster creation. Users can use this code to join a cluster.
+      function makeid(length) {
+        var result = '';
+        var characters = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789';
+        var charactersLength = characters.length;
+        for (var i = 0; i < length; i++) {
+          result += characters.charAt(Math.floor(Math.random() * charactersLength));
+        }
+        return result
+      }
+
+      const randomCode = makeid(8)
       await Cluster.create({
         cluster_name: req.body.title,
         creator_user_id: req.user.id,
+        cluster_join_id: randomCode,
         cluster_members: req.user.id,
         member_count: 1,
       });
@@ -56,6 +78,7 @@ module.exports = {
       // Upload image to cloudinary
       const result = await cloudinary.uploader.upload(req.file.path);
 
+      console.log(req.body)
       await Post.create({
         title: req.body.title,
         image: result.secure_url,
@@ -66,6 +89,27 @@ module.exports = {
       });
       console.log("Post has been added!");
       res.redirect("/profile");
+    } catch (err) {
+      console.log(err);
+    }
+  },
+  createTask: async (req, res) => {
+    try {
+      // Upload image to cloudinary
+
+      await Task.create({
+        task_name: req.body.title,
+        creator_user_id: req.user.id,
+        task_is_completed: false,
+        user: req.user.id,
+      });
+
+      console.log("Task has been added!");
+
+      const tasks = await Task.find({ user: req.user.id })
+      console.log(tasks)
+
+      res.render("userProfile.ejs", { user: req.user.id });
     } catch (err) {
       console.log(err);
     }

@@ -9,6 +9,10 @@ const clusterSchema = new mongoose.Schema({
     type: String,
     required: true,
   },
+  cluster_join_id:{
+    type: String,
+    required: true,
+  },
   cluster_members:{
     type: [String],
     required: true,

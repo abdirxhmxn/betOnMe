@@ -11,6 +11,8 @@ router.post("/createPost", upload.single("file"), postsController.createPost);
 
 router.post("/createCluster", upload.single("file"), postsController.createCluster);
 
+router.post("/createTask", upload.single("file"), postsController.createTask);
+
 router.put("/likePost/:id", postsController.likePost);
 
 router.delete("/deletePost/:id", postsController.deletePost);
