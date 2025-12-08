@@ -12,14 +12,16 @@ _Users can compete against their friends to help build habits! Find clusters to 
     * _let pms figure out how to organize the branch_
 
 ## How to submit your code for review
-1. Fork and Clone this repo
-2. Checkout your teams branch (e.g backend-branch, frontend-branch, etc)
+1. Fork and Clone the Main Branch
+2. Checkout your teams respective branch (e.g backend-branch, frontend-branch, etc)
 3. Make your changes
-4. Push changes to your branch
-5. Request to merge
-6. Ping a PM for a merge request review
-7. Wait for DevOps to review
-8. M E R G E
+4. Push changes to your respective branch (e.g backend-branch, frontend-branch, etc)
+5. Have someone review your changes
+6. Ping a PM for a merge request review to the DevOps Branch
+7. Request Devops To Review Your Pull-Request (PR)
+8. Wait for DevOps to review your PR
+9. DevOps will either approve or decline the PR
+10. If all looks good DevOps will Merge changes to the Main Branch
 
 ## How to Build & Run the App
 
