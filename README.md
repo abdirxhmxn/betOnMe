@@ -1,33 +1,28 @@
 # betOnMe
-_Users can compete against their friends to help build habits!_
+_Users can compete against their friends to help build habits! Find clusters to share the habits you want to improve on, betting on yourself and your companions to complete the habit building task with a specified amount of time and frequency for completion._
 
-1 master version bub
-branches/forks for each team
-main
-*devops branch
-*backend branch
-  //let pms figure out how to organize a branch
-*frontend branch
-  //let pms figure out how to organize the branch
+## Structure of app
+
+* _Branches are provided for each team_
+  * __1 master version: Main__ (Requests are only made to main under special circumstances)
+  * __devops branch__
+  * __backend branch__
+    * _let pms figure out how to organize a branch_
+  * __frontend branch__
+    * _let pms figure out how to organize the branch_
 
 ## How to submit your code for review
-1. Fork and Clone this repo
-2. Checkout your teams branch (e.g backend-branch, frontend-branch, etc)
+1. Fork and Clone the Main Branch
+2. Checkout your teams respective branch (e.g backend-branch, frontend-branch, etc)
 3. Make your changes
-4. Push changes to your branch
-5. Request to merge
-6. Ping a PM for a merge request review
-7. Wait for DevOps to review
-8. M E R G E
+4. Push changes to your respective branch (e.g backend-branch, frontend-branch, etc)
+5. Have someone review your changes
+6. Ping a PM for a merge request review to the DevOps Branch
+7. Request Devops To Review Your Pull-Request (PR)
+8. Wait for DevOps to review your PR
+9. DevOps will either approve or decline the PR
+10. If all looks good DevOps will Merge changes to the Main Branch
 
-## Tech Stack: 
-| Category  | Tools                               |
-| --------- | ----------------------------------- |
-| Backend   | Node.js, Express, Mongoose, MongoDB |
-| Frontend  | EJS, HTML, CSS, JavaScript          |
-| Dev Tools | dotenv                     |
-
-Issues & Actions to look into:
 ## How to Build & Run the App
 
 Follow these steps to run the project locally:
@@ -61,3 +56,12 @@ Navigate to:
 
 http://localhost:3000   → client
 http://localhost:5000   → backend API
+
+## Tech Stack: 
+| Category  | Tools                               |
+| --------- | ----------------------------------- |
+| Backend   | Node.js, Express, Mongoose, MongoDB |
+| Frontend  | EJS, HTML, CSS, JavaScript          |
+| Dev Tools | dotenv                     |
+
+Issues & Actions to look into:
